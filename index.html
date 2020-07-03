@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Simpsons Picker for Disney+</title>
+
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script>
+
+    function random_episode(){
+        let all_eps = [];
+        for(let season = 1; season <= 10; season++){
+            all_eps.push(...data.season[String(season)]);
+        }
+        const pick = Math.floor(Math.random() * all_eps.length);
+        window.open(all_eps[pick],"_blank");
+    }
+
+</script>
+    <section class="container">
+        <h1>Random Simpsons Episode for Disney+</h1>
+        <h3>Season 1 - 10</h3>
+        <h5>Opens a random episode of the Simpsons in Disney+</h5>
+        <button onclick="random_episode()">Random Episode</button>
+
+        <h6>tbh dunno why you can't just do this in the app. If you work for Disney please make this a thing.</h6>
+
+        <img src="inanimate.jpg" alt="I'll show him inanimate!">
+
+    </section>
+
+
+</body>
+
+
+</html>
